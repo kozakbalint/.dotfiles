@@ -1,1 +1,3 @@
-/Users/balintkozak/.dotfiles/gitconfig
+[user]
+  name = Bálint Kozák
+  email = kozak.balint15@gmail.com
