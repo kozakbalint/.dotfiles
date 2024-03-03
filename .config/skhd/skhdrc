@@ -1,0 +1,34 @@
+# App keybinds
+hyper - t : open -na /opt/homebrew/bin/alacritty
+hyper - b : open -na /Applications/Arc.app
+
+# Restart Yabai
+cmd + shift - r : yabai --restart-service 
+
+# Close focused app
+hyper - backspace : $(yabai -m window $(yabai -m query --windows --window | jq -re ".id") --close)
+
+# increase window size
+shift + alt - a : yabai -m window --resize left:-20:0
+shift + alt - w : yabai -m window --resize top:0:-20
+
+
+# decrease window size
+shift + cmd - s : yabai -m window --resize bottom:0:-20:0
+shift + cmd - w : yabai -m window --resize top:0:20
+
+# toggle window zoom
+hyper - f : yabai -m window --toggle zoom-fullscreen
+
+# swap windows
+hyper - y : yabai -m window --swap west
+
+# rotate tree 90
+hyper - r : yabai -m space --rotate 90
+
+
+hyper - 1 :yabai -m query --spaces --space 1 | jq -r '.windows[0] // empty' | xargs yabai -m window --focus;
+hyper - 2 :yabai -m query --spaces --space 2 | jq -r '.windows[0] // empty' | xargs yabai -m window --focus;
+hyper - 3 :yabai -m query --spaces --space 3 | jq -r '.windows[0] // empty' | xargs yabai -m window --focus;
+hyper - 4 :yabai -m query --spaces --space 4 | jq -r '.windows[0] // empty' | xargs yabai -m window --focus;
+hyper - 5 :yabai -m query --spaces --space 5 | jq -r '.windows[0] // empty' | xargs yabai -m window --focus;
