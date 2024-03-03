@@ -1,0 +1,12 @@
+[user]
+	name = Bálint Kozák
+	email = kozak.balint15@gmail.com
+[core]
+	excludesFile = /Users/balintkozak/.gitignore
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[init]
+	defaultBranch = main
